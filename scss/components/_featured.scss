@@ -1,0 +1,57 @@
+.featured {
+  background-color: $color-yellow;
+
+  &__container {
+    margin: auto;
+    max-width: 1400px;
+    padding: 48px 24px;
+  }
+
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 500;
+    font-family: $ff-bold;
+    color: $color-navy;
+  }
+
+  .marquee {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 32px;
+
+    &-wrapper {
+      margin: 6px;
+
+      a {
+        background-color: $color-yellowDark;
+        display: flex;
+        align-items: center;
+        border-radius: 100px;
+        padding: 12px 20px;
+        border-radius: 100px;
+
+        img {
+          border-radius: 50%;
+          height: 64px;
+          width: 64px;
+          margin-right: 15px;
+        }
+
+        div {
+          text-transform: uppercase;
+          font-size: 17px;
+          font-weight: 600;
+          font-family: $ff-bold;
+          letter-spacing: 2;
+          line-height: 22px;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

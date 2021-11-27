@@ -1,0 +1,140 @@
+.header {
+  position: relative;
+  background-color: $color-offWhite;
+
+  &__container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  .nav-logo {
+    > div {
+      font-weight: 700;
+      font-family: $ff-bold;
+      font-size: 48px;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-item {
+      font-size: 18px;
+      font-weight: 600;
+      font-family: $ff-bold;
+      line-height: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      .nav-link {
+        color: $primary-text-color;
+      }
+
+      &:not(:last-child) {
+        padding: 0 30px;
+      }
+
+      &.btn-connect {
+        cursor: pointer;
+        box-sizing: border-box;
+        min-width: 200px;
+        padding: 16px 24px;
+        text-align: center;
+        background-color: $color-purple;
+        color: $color-offWhite;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+
+    @media (max-width: 768px) {
+      right: 42px;
+      top: 35px;
+    }
+
+    @media (max-width: 600px) {
+      right: 42px;
+      top: 26px;
+    }
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    color: $primary-text-color;
+    background-color: $primary-text-color;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    .nav-menu {
+      position: fixed;
+      top: -100%;
+      z-index: 1000;
+      left: 0;
+      flex-direction: column;
+      // background-color: $primary-bg-color;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .hamburger {
+      position: fixed;
+      display: block !important;
+      cursor: pointer;
+      z-index: 1001;
+
+      &.active {
+        .bar {
+          color: $secondary-text-color;
+          // background-color: $secondary-bg-color;
+        }
+      }
+    }
+
+    .backdrop {
+      &.active {
+        // background-color: $secondary-bg-color;
+        opacity: 0.5;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
