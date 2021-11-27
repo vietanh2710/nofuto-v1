@@ -23,7 +23,7 @@ $(document).ready(function () {
 
   AOS.init({
     offset: 400,
-    delay: 0,
-    duration: 1000,
+    delay: 200,
+    duration: 600,
   });
 });
